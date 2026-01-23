@@ -60,3 +60,22 @@ Runs both programs with 1 worker for all task types (CPU, Mem, IO) and records t
 **Command:**
 ```bash
 make run_partC
+```
+* **Output:** Generates `MT25056_Part_C_CSV.csv`.
+
+### Part D: Scaling & Concurrency Analysis
+Runs the programs with increasing worker counts (2 to 8), captures metrics, and automatically generates plots.
+
+**Command:**
+```bash
+make run_partD
+```
+* **Output:**
+    1.  **Data:** `MT25056_Part_D_CSV.csv`
+    2.  **Standard Plots:**
+        * `MT25056_Part_D_plot_time.png` (Execution Time vs Concurrency)
+        * `MT25056_Part_D_plot_resources.png` (CPU & Memory Usage)
+        * `MT25056_Part_D_plot_io.png` (Disk Throughput)
+    3.  **Advanced Analysis Plots:**
+        * `MT25056_Part_D_plot_advanced_efficiency.png` (Scheduler Overhead & Structure Cost)
+        * `MT25056_Part_D_plot_advanced_behavior.png` (Fairness & IO Efficiency)
