@@ -1,0 +1,169 @@
+Roll No: MT25056
+Graduate Systems (CSE638) - PA02
+Analysis of Network I/O Primitives using perf
+
+
+==================================================
+1. Overview
+==================================================
+
+This project implements and analyzes three socket communication models:
+
+A1: Two-Copy using send()/recv()
+A2: One-Copy using sendmsg() with scatter-gather
+A3: Zero-Copy using sendmsg() with MSG_ZEROCOPY
+
+The programs are implemented using multithreaded TCP client-server architecture
+and are profiled using the Linux perf tool.
+
+
+==================================================
+2. Folder Contents
+==================================================
+
+Source Files:
+- MT25056_Part_A1_Server.c
+- MT25056_Part_A1_Client.c
+- MT25056_Part_A2_Server.c
+- MT25056_Part_A2_Client.c
+- MT25056_Part_A3_Server.c
+- MT25056_Part_A3_Client.c
+
+Scripts:
+- MT25056_Part_C_RunExperiments.sh
+- MT25056_Part_D_Plots.py
+
+Build Files:
+- Makefile
+- README
+
+Data:
+- MT25056_Part_C_Results.csv
+
+Report:
+- MT25056_Report.pdf
+
+
+==================================================
+3. System Configuration
+==================================================
+
+OS: Ubuntu Linux (Dual Boot)
+Kernel: 6.8.0-94-generic
+CPU: x86_64
+Profiler: perf (linux-tools)
+
+
+==================================================
+4. Compilation
+==================================================
+
+To compile all programs:
+
+    make
+
+To clean binaries:
+
+    make clean
+
+
+==================================================
+5. Execution Instructions
+==================================================
+
+---------------- A1 ----------------
+
+Server:
+
+    ./server_a1 <port> <msg_size>
+
+Client:
+
+    ./client_a1 <server_ip> <port> <msg_size> <threads>
+
+
+---------------- A2 ----------------
+
+Server:
+
+    ./server_a2 <port> <msg_size>
+
+Client:
+
+    ./client_a2 <server_ip> <port> <msg_size> <threads>
+
+
+---------------- A3 ----------------
+
+Server:
+
+    ./server_a3 <port> <msg_size>
+
+Client:
+
+    ./client_a3 <server_ip> <port> <msg_size> <threads>
+
+
+Example:
+
+    ./server_a1 8080 1024
+    ./client_a1 127.0.0.1 8080 1024 4
+
+
+==================================================
+6. Part C Automation
+==================================================
+
+To run automated experiments:
+
+    ./MT25056_Part_C_RunExperiments.sh
+
+This generates:
+
+    MT25056_Part_C_Results.csv
+
+
+==================================================
+7. Part D Plot Generation
+==================================================
+
+To generate plots:
+
+    python3 MT25056_Part_D_Plots.py
+
+This generates PNG files for report screenshots.
+
+
+==================================================
+8. AI Usage Declaration
+==================================================
+
+AI tools (ChatGPT) were used for:
+
+- Understanding assignment requirements
+- Debugging shell scripts
+- Improving perf parsing
+- Structuring Makefile and README
+- Plot generation logic
+- Performance analysis guidance
+
+All code was reviewed, tested, and understood by the student.
+Manual debugging and validation were performed for correctness.
+
+
+==================================================
+9. GitHub Repository
+==================================================
+
+Public Repository URL:
+
+<PASTE YOUR GITHUB LINK HERE>
+
+
+==================================================
+10. Author
+==================================================
+
+Name: Aaditya Shinde
+Roll No: MT25056
+Course: Graduate Systems (CSE638)
